@@ -1,0 +1,224 @@
+$main-color: #2c3554;
+$main-gold: #dfad7c;
+$main-link: #32b29c;
+$main-red: #de4c4c;
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-size: 1rem;
+  background-color: $main-color;
+  font-family: 'Microsoft Jhenghei';
+}
+
+// 標題
+h2 {
+  font-size: 3.4rem;
+}
+
+.form-control {
+  padding: 1rem;
+}
+// 導覽列
+.navbar {
+  background-color: transparent !important;
+  position: relative;
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        margin: 0 1rem;
+        color: #fff;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+// mobile
+.navbar-toggler {
+  border: 1px solid #fff;
+  .navbar-toggler-icon {
+    color: #fff;
+  }
+}
+
+header {
+  h2 {
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1rem;
+  }
+  .header-icons {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    transform: scale(0.7);
+    transform-origin: center;
+    li {
+      list-style: none;
+      margin: 0 1rem;
+    }
+  }
+}
+
+.SearchBlock {
+  text-align: center;
+  margin-top: 3rem;
+  .form-group {
+    max-width: 800px;
+    margin: auto;
+    .inputBg {
+      position: relative;
+      margin-bottom: 2rem;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 800px;
+        height: 51px;
+        background: url('../img/input-cloud.png') repeat-x;
+        transform: translate(-50%, 50%);
+      }
+    }
+
+    input {
+      border: none;
+      padding: 2rem;
+      padding-bottom: 2.6rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  .searchKey {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    font-size: 1.8rem;
+    margin-bottom: 6rem;
+    .item {
+      line-height: 3rem;
+
+      &:last-child {
+        &:after {
+          content: none;
+        }
+      }
+      &:after {
+        content: '、';
+        color: $main-gold;
+      }
+      a {
+        color: $main-gold;
+        text-decoration: none;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.TopBoard {
+  .TopBoard-header {
+    .title {
+      text-align: center;
+      color: $main-gold;
+    }
+    .subtitle {
+      text-align: center;
+      color: #fff;
+      display: flex;
+      white-space: pre;
+      align-items: center;
+      h4 {
+        font-size: 1.8rem;
+        margin: 1rem 2rem;
+      }
+      &:before,
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        border: 1px dashed $main-gold;
+      }
+    }
+  }
+  .TopBoard-body {
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      .item {
+        position: relative;
+        display: block;
+        flex: 0 0 calc(50% - 3rem);
+        background-color: #fff;
+        margin: 1.5rem;
+        padding: 2rem 2rem 1rem 2rem;
+        text-decoration: none;
+        border-radius: 0.6rem;
+        &:first-child {
+          &:before {
+            text-indent: -9999px;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 48px;
+            height: 46px;
+            background: url(../img/icon-star.png);
+            background-size: contain;
+            transform: translate(-50%, -50%);
+          }
+        }
+        &:before {
+          content: attr(data-idx);
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 50%;
+          background-color: $main-red;
+          width: 36px;
+          height: 36px;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-size: 2rem;
+        }
+        .item-left {
+          h4 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+          }
+          p {
+            margin-bottom: 0;
+            i {
+              margin-right: 0.2rem;
+            }
+            .link {
+              color: $main-link;
+              font-size: 1.5rem;
+              vertical-align: middle;
+            }
+          }
+        }
+        .item-right {
+          position: relative;
+          .content {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
